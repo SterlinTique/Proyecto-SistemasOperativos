@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Listar</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+</head>
+<body>
+    <h1>Productos</h1>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.nombre }} - {{ producto.precio }}
+                <a href="{{ url_for('editar_producto', id=producto.id) }}">Editar</a>
+                <form action="{{ url_for('eliminar_producto', id=producto.id) }}" method="POST">
+                    <input type="submit" value="Eliminar">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Inicio</a>
+</body>
+</html>
+

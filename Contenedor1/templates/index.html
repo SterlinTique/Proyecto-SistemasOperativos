@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <p>Inicio de la aplicación.</p>
+    
+
+<h1>Productos</h1>
+
+<ul>
+    <li><a href="{{ url_for('listar_productos') }}">Listar productos</a></li>
+    <li><a href="{{ url_for('crear_producto') }}">Crear producto</a></li>
+</ul>
+
+<h2>Productos</h2>
+
+<ul>
+    {% for producto in productos %}
+        <li>{{ producto.nombre }} - {{ producto.precio }}
+            <p>{{ producto.descripcion }}</p>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
