@@ -1,2 +1,4 @@
 proyecto-contenedores/**/__pycache__/
 proyecto-contenedores/**/env/
+__pycache__/
+env/
